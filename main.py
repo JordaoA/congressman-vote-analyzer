@@ -67,7 +67,7 @@ for i in range(len(dataOf2018)):
 partidos2018.sort()
 for i in range(len(nvotes2018.voto)):
 	partidos2018[i] = (partidos2018[i],nvotes2018.voto[i])
-
+"""
 print("###DATA OF 2015###")
 print(partidos2015)
 print("\n###DATA OF 2016###")
@@ -76,7 +76,7 @@ print("\n###DATA OF 2017###")
 print(partidos2017)
 print("\n###DATA OF 2018###")
 print(partidos2018)
-
+"""
 
 #Agrupando partidos e votos de todos os anos relacionados a ele em dicionario
 ###########################--2015--################################
@@ -104,7 +104,18 @@ for i in range(len(partidos2018)):
 	else:
 		votes[partidos2018[i][0]].append(partidos2018[i][1])
 
-
+"""
 print("\nAll data in the dictionary\n")
 print(votes)
+"""
+
+#Tentativa de colocar os dados de votos de cada partido em um so grafico simples
+plt.xlabel("x - anos de votação")
+plt.ylabel("y - votos")
+for i in votes:
+	plt.plot(votes[i],label = i)
+plt.legend()
+plt.show()
+
+
 print("\n:)")
