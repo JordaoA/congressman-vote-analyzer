@@ -13,10 +13,10 @@ partidos2018 = {}
 labels = ["partido","Votos-1","Votos0","Votos1","Votos2","Votos3"]
 
 #Leitura de dados obtidos atraves dos csv's dos anos de 2015, 2016, 2017 e 2018
-dataOf2015 = pd.read_csv("data/pure_Data/votacoes_2015.csv",",")
-dataOf2016 = pd.read_csv("data/pure_Data/votacoes_2016.csv",",")
-dataOf2017 = pd.read_csv("data/pure_Data/votacoes_2017.csv",",")
-dataOf2018 = pd.read_csv("data/pure_Data/votacoes_2018.csv",",")
+dataOf2015 = pd.read_csv("../data/pure_Data/votacoes_2015.csv",",")
+dataOf2016 = pd.read_csv("../data/pure_Data/votacoes_2016.csv",",")
+dataOf2017 = pd.read_csv("../data/pure_Data/votacoes_2017.csv",",")
+dataOf2018 = pd.read_csv("../data/pure_Data/votacoes_2018.csv",",")
 
 #Filtra alguns dados para um dicionario.
 handlers.dataFrameToDic(dataOf2015,partidos2015)
