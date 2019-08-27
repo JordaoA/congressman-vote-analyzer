@@ -1,4 +1,6 @@
+# coding: utf-8
 import numpy as np
+import pandas as pd
 
 #Traduz um determinado DataFrame para um dicionario
 def dataFrameToDic(dataFrame,dic):
@@ -28,3 +30,11 @@ def separaEmLista(dictionary):
 		toReturn.append([i,auxDic[-1],auxDic[0],auxDic[1],auxDic[2],auxDic[3]])
 
 	return toReturn
+
+def filtraDados(ano):
+	partidos = {}
+	labels = ["partido","Votos-1","Votos0","Votos1","Votos2","Votos3"]
+	data = pd.read_csv("../data/pure_Data/votacoes_"+ ano +".csv",",")
+	dataFrameToDic(data, partidos)
+	listaVotos = separaEmLista(partidos)
+	return pd.DataFrame(listaVotos,columns = labels)
