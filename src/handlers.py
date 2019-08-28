@@ -21,7 +21,7 @@ def dataFrameToDic(dataFrame,dic):
 def separaEmLista(dictionary):
 	toReturn = []
 	for i in dictionary:
-		auxDic = {-1: None, 0: None, 1: None, 2: None, 3: None}
+		auxDic = {-1: 0, 0: 0, 1: 0, 2: 0, 3: 0}
 		
 		for j in dictionary[i][1]:
 			if j in auxDic:
@@ -38,3 +38,15 @@ def filtraDados(ano):
 	dataFrameToDic(data, partidos)
 	listaVotos = separaEmLista(partidos)
 	return pd.DataFrame(listaVotos,columns = labels)
+
+def preparaMenu(dataFrame):
+	titles = []
+	lenOfDataFrame = len(dataFrame) 
+	for i in range(lenOfDataFrame):
+		titles.append((dataFrame.partido[i],i))
+	return titles
+
+def median(lista):
+    n = len(lista)
+    s = sorted(lista)
+    return (sum(s[n//2-1:n//2+1])/2.0, s[n//2])[n % 2] if n else None
