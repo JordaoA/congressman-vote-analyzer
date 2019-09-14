@@ -18,35 +18,39 @@ def dataFrameToDic(dataFrame,dic):
 				dic[partido][1][voto][1] += 1
 
 #Separa a lista para criação de Data Frame especial a partir de dicionario
-def separaEmLista(dictionary):
-	toReturn = []
+def separaEmLista(dictionary,listaVotos):
+	
 	for i in dictionary:
 		auxDic = {-1: 0, 0: 0, 1: 0, 2: 0, 3: 0}
 		
 		for j in dictionary[i][1]:
 			if j in auxDic:
 				auxDic[j] = dictionary[i][1][j][1]
-		
-		toReturn.append([i,auxDic[-1],auxDic[0],auxDic[1],auxDic[2],auxDic[3]])
+		#Possibilidade de votos: Não" = -1, "Faltou" = 0, "Sim" = 1, "Obstrução" = 2, "Abstenção" = 3, "Art. 17" = 4
+		contra = auxDic[-1]
+		faltante = 	auxDic[0]
+		aFavor = auxDic[1]
+		obstrucao = auxDic[2]
+		abstencao = auxDic[3]
+		listaVotos.append([i,contra,faltante,aFavor,obstrucao,abstencao])
 
-	return toReturn
+def filterData(ano):
 
-def filtraDados(ano):
 	partidos = {}
+	listaVotos = []
+	
+	path = "../data/pure_Data/votacoes_{ano}.csv".format(ano = ano)
 	labels = ["partido","Votos-1","Votos0","Votos1","Votos2","Votos3"]
-	data = pd.read_csv("../data/pure_Data/votacoes_"+ ano +".csv",",")
+	data = pd.read_csv(path,",")
+
 	dataFrameToDic(data, partidos)
-	listaVotos = separaEmLista(partidos)
-	return pd.DataFrame(listaVotos,columns = labels)
+	separaEmLista(partidos,listaVotos)
+	dataFrame = pd.DataFrame(listaVotos,columns = labels)
+	
+	return dataFrame
 
-def preparaMenu(dataFrame):
-	titles = []
-	lenOfDataFrame = len(dataFrame) 
-	for i in range(lenOfDataFrame):
+def getMenu(dataFrame,titles):
+	lengthOfDataFrame = len(dataFrame)
+
+	for i in range(lengthOfDataFrame):
 		titles.append((dataFrame.partido[i],i))
-	return titles
-
-def median(lista):
-    n = len(lista)
-    s = sorted(lista)
-    return (sum(s[n//2-1:n//2+1])/2.0, s[n//2])[n % 2] if n else None
