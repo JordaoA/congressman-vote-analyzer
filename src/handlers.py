@@ -1,4 +1,8 @@
 # coding: utf-8
+"""
+Modulo responsavel por guardar funções responsaveis por manipular datasets
+e transforma-los em novos, para facilitar a manipulação de dados com o uso da biblioteca "pandas" 
+"""
 import numpy as np
 import pandas as pd
 
@@ -26,7 +30,6 @@ def separaEmLista(dictionary,listaVotos):
 		for j in dictionary[i][1]:
 			if j in auxDic:
 				auxDic[j] = dictionary[i][1][j][1]
-		#Possibilidade de votos: Não" = -1, "Faltou" = 0, "Sim" = 1, "Obstrução" = 2, "Abstenção" = 3, "Art. 17" = 4
 		contra = auxDic[-1]
 		faltante = 	auxDic[0]
 		aFavor = auxDic[1]
@@ -34,8 +37,9 @@ def separaEmLista(dictionary,listaVotos):
 		abstencao = auxDic[3]
 		listaVotos.append([i,contra,faltante,aFavor,obstrucao,abstencao])
 
+#filtra dados transformando de dicionario para matriz (lista de listas)
+#para que seja criado o dataframe para facilitar a manipulação de dados com o uso da biblioteca pandas.
 def filterData(ano):
-
 	partidos = {}
 	listaVotos = []
 	
@@ -49,6 +53,7 @@ def filterData(ano):
 	
 	return dataFrame
 
+#Gera menu para a escolha do partido
 def getMenu(dataFrame,titles):
 	lengthOfDataFrame = len(dataFrame)
 
