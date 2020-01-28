@@ -3,6 +3,6 @@
   Aqui são feitas as tarefas de tratamento e visualização de dados, referentes a votos de congressistas de alguns partidos brasileiros. Todas as informações disponíveis nos datasets estão separadas por ano (2015, 2016, 2017 e 2018).
 
 # Bibliotecas utilizadas:
-  pandas: usado para tratar e filtrar informações fornecidas pelos datasets.
-  matplotlib: usado para representar votos dos congressistas em um gráfico simples de barras, separando por ano.
-  numpy: usado para auxiliar a criação dos gráficos em conjunto com o matplotlib, e de forma interna pela biblioteca pandas.
+- __pandas__: usado para tratar e filtrar informações fornecidas pelos datasets.
+- __matplotlib__: usado para representar votos dos congressistas em um gráfico simples de barras, separando por ano.
+- __numpy__: usado para auxiliar a criação dos gráficos em conjunto com o matplotlib, e de forma interna pela biblioteca pandas.
