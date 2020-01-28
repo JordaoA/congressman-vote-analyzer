@@ -43,7 +43,7 @@ def filterData(ano):
 	partidos = {}
 	listaVotos = []
 	
-	path = "../data/pure_Data/votacoes_{ano}.csv".format(ano = ano)
+	path = "../data/votacoes_{ano}.csv".format(ano = ano)
 	labels = ["partido","Votos-1","Votos0","Votos1","Votos2","Votos3"]
 	data = pd.read_csv(path,",")
 

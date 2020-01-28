@@ -1,5 +1,5 @@
 #coding: utf-8
-import handlers as hd
+import utils.handlers as hd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -13,6 +13,7 @@ dataFrame2018 = hd.filterData("2018")
 while True:
     titles = []
     while titles == []:
+        
         ano = input("\n*** Escolha o ano de votação : ")
 
         if ano == "2015":
@@ -43,7 +44,7 @@ while True:
 
     while partidoNaoValido:
         partidoEscolhido = int(input("**** Escolha o partido : "))
-        if partidoEscolhido <= len(titles) and partidoEscolhido > 1:
+        if partidoEscolhido <= len(titles) and partidoEscolhido >= 1:
             partidoNaoValido = False
         else:
             print("\n**** NUMERO DE PARTIDO INVALIDO ****\n")
