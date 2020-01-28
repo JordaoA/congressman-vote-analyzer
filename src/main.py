@@ -12,8 +12,8 @@ dataFrame2018 = hd.filterData("2018")
 #Gera menu de acordo com o ano escolhido
 while True:
     titles = []
+    
     while titles == []:
-        
         ano = input("\n*** Escolha o ano de votação : ")
 
         if ano == "2015":
