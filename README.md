@@ -1,3 +1,8 @@
 # congressman-vote-analyzer
-Tratamento e vizualização de dados referentes a votos de congressistas de alguns partidos dos anos 2015, 2016, 2017 e 2018.
-Projeto pessoal feito para exercicio e aprendizado de algumas das bibliotecas pertencentes ao pacote SciPy.
+  Projeto pessoal, feito para exercício e aprendizado de algumas habilidades, referentes à análise e visualização de dados. Os dados (todos de forma tabulada) foram tratados com o uso de bibliotecas pertencentes ao pacote SciPy.
+  Aqui são feitas as tarefas de tratamento e visualização de dados, referentes a votos de congressistas de alguns partidos brasileiros. Todas as informações disponíveis nos datasets estão separadas por ano (2015, 2016, 2017 e 2018).
+
+# Bibliotecas utilizadas:
+  pandas: usado para tratar e filtrar informações fornecidas pelos datasets.
+  matplotlib: usado para representar votos dos congressistas em um gráfico simples de barras, separando por ano.
+  numpy: usado para auxiliar a criação dos gráficos em conjunto com o matplotlib, e de forma interna pela biblioteca pandas.
